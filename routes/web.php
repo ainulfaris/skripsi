@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\alternatifController;
 use App\Http\Controllers\kriteriaController;
+use App\Http\Controllers\loginController;
 use App\Http\Controllers\userController;
 
 /*
@@ -32,13 +33,8 @@ Route::post('/kriteria/insert', [kriteriaController::class, 'insert']);
 
 Route::get('/user', [userController::class, 'index']);
 
-Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/login', function(){
-    return view('v_login');
-});
+Route::get('/login', [loginController::class, 'index']);
 
-Route::post('/postLogin', 'loginController@postLogin')->name("postLogin");
+Route::post('/login', [loginController::class, 'login'])->name("login");
