@@ -31,7 +31,9 @@ Route::get('/kriteria/add', [kriteriaController::class, 'add']);
 Route::post('/kriteria/insert', [kriteriaController::class, 'insert']);
 
 Route::get('/user', [userController::class, 'index']);
-Auth::routes();
+
+Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
