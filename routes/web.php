@@ -35,3 +35,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/login', function(){
+    return view('v_login');
+});
+
+Route::('/postLogin', 'loginController@postLogin')->name("postLogin");
