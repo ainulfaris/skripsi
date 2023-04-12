@@ -41,4 +41,4 @@ Route::get('/login', function(){
     return view('v_login');
 });
 
-Route::('/postLogin', 'loginController@postLogin')->name("postLogin");
+Route::post('/postLogin', 'loginController@postLogin')->name("postLogin");
