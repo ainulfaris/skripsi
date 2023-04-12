@@ -38,3 +38,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/login', [loginController::class, 'index']);
 
 Route::post('/login', [loginController::class, 'login'])->name("login");
+Route::post('/logout', [loginController::class, 'logout'])->name("logout");

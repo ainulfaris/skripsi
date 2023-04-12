@@ -18,4 +18,10 @@ class loginController extends Controller
         }
         return redirect()->route('login')->with('error', 'Email-Address And Password Are Wrong.');
     }
+
+    public function logout()
+    {
+        auth()->logout();
+        return redirect()->route('login');
+    }
 }
